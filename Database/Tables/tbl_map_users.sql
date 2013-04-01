@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[tbl_map_Users](
+	[Name] [nvarchar](100) NOT NULL,
+	[IsAdmin] [bit] NOT NULL,
+ CONSTRAINT [UQ_Name] UNIQUE NONCLUSTERED 
+(
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tbl_map_Users] ADD CONSTRAINT [DF_tbl_map_Users_IsAdmin]  DEFAULT ((0)) FOR [IsAdmin]
+GO

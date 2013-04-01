@@ -1,0 +1,11 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "Карта офиса";
+}
+
+@section Scripts{
+	@if (User.IsInRole("Manager"))
+	{
+		<script src="~/Scripts/leaflet-map-edit.js" type="text/javascript"></script>
+	}
+}

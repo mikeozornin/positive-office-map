@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" charset="utf-8" />
+
+	<!-- leaflet -->
+	<link rel="stylesheet" href="~/Scripts/leaflet-0.4.5/leaflet.css" />
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="~/Scripts/leaflet-0.4.5/leaflet.ie.css"/>
+    <![endif]-->
+	<link rel="stylesheet" href="~/Content/chosen.css" />
+	<link href="~/Content/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="~/Content/Site.css" />
+
+	<script src="~/Scripts/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="~/Scripts/chosen.jquery.js" type="text/javascript"></script>
+	<script src="~/Scripts/leaflet-map-show.js" type="text/javascript"></script>
+	@RenderSection("Scripts")
+
+	<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="~/Scripts/leaflet-0.4.5/leaflet.js"></script>
+	<script type="text/javascript">
+		var currentUser = '@User.Identity.Name.Replace("PTSECURITY\\",string.Empty)';
+		var serviceHost = '/';
+	</script>
+</head>
+<body>
+	<div id="map" class="map">
+	</div>
+
+	<div id="peopleSelect" class="peopleSelect">
+		<select data-placeholder="ФИО коллеги, название переговорки, объект на карте" class="chzn-select" tabindex="1" id='search-select' onchange="showBallonForPOIObject(this.value)">
+			<option value=""></option>
+		</select>
+		<input type="button" class="btn" style="margin-left:10px;margin-bottom:3px;font-family:pt sans,arial,sans-serif;font-size:13px;line-height:14px;height:25px;" onclick="showMe()" value="Найти мой стол"/>
+	</div>
+	<script>init();</script>
+</body>
+</html>
