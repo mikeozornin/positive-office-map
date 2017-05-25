@@ -106,6 +106,5 @@
     <Build Include="Stored Procedures\sp_map_Poi_Update.sql" />
     <Build Include="Stored Procedures\sp_map_Poi_Delete.sql" />
     <Build Include="Tables\tbl_map_users.sql" />
-    <Build Include="Stored Procedures\sp_map_PortalData_Get.sql" />
   </ItemGroup>
 </Project>
